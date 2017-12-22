@@ -1,0 +1,6 @@
+framework module Pods_EdSocialSCUITests {
+  umbrella header "Pods-EdSocialSCUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
