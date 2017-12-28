@@ -11,7 +11,7 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 
-class UploadsController: UITableViewController {
+class PostsController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,15 +20,15 @@ class UploadsController: UITableViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
         
         let image = UIImage(named: "new-post-icon")
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(handleNewUpload))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(handleNewPost))
         checkUserIsLoggedIn()
         
         
     }
     
-    func handleNewUpload() {
-        let newUploadController = NewUploadController()
-        let navController = UINavigationController(rootViewController: newUploadController)
+    func handleNewPost() {
+        let newPostController = NewPostController()
+        let navController = UINavigationController(rootViewController: newPostController)
         present(navController, animated: true, completion: nil)
     }
     
@@ -75,7 +75,7 @@ class UploadsController: UITableViewController {
         
         
         let loginController = LoginController()
-        loginController.uploadsController = self
+        loginController.postsController = self
         present(loginController, animated: true, completion: nil)
     }
     

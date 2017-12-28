@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseDatabase
 
-class NewUploadController: UITableViewController {
+class NewPostController: UITableViewController {
     
     let cellID = "cellID"
     var users = [EndUser]()

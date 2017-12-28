@@ -12,7 +12,7 @@ import FirebaseDatabase
 
 class LoginController: UIViewController {
     
-    var uploadsController: UploadsController?
+    var postsController: PostsController?
     
     lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
@@ -107,7 +107,7 @@ class LoginController: UIViewController {
                 print(uid!)
             }
         }
-        self.uploadsController?.fetchUserAndSetupNavBarTitle()
+        self.postsController?.fetchUserAndSetupNavBarTitle()
         self.dismiss(animated: true, completion: nil)
     }
     

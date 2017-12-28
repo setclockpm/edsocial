@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3D36716B1FF24D87004B98BB /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D36716A1FF24D87004B98BB /* Post.swift */; };
-		3D4707351FD8D63000DF4373 /* NewUploadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4707341FD8D63000DF4373 /* NewUploadController.swift */; };
+		3D4707351FD8D63000DF4373 /* NewPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4707341FD8D63000DF4373 /* NewPostController.swift */; };
 		3D539AAA1FF35813006082EB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D539AA91FF35813006082EB /* Extensions.swift */; };
 		3D6A18901FD39B1700E71B9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6A188F1FD39B1700E71B9F /* AppDelegate.swift */; };
-		3D6A18921FD39B1700E71B9F /* UploadsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6A18911FD39B1700E71B9F /* UploadsController.swift */; };
+		3D6A18921FD39B1700E71B9F /* PostsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6A18911FD39B1700E71B9F /* PostsController.swift */; };
 		3D6A18951FD39B1700E71B9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D6A18931FD39B1700E71B9F /* Main.storyboard */; };
 		3D6A18971FD39B1700E71B9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D6A18961FD39B1700E71B9F /* Assets.xcassets */; };
 		3D6A189A1FD39B1700E71B9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D6A18981FD39B1700E71B9F /* LaunchScreen.storyboard */; };
@@ -48,11 +48,11 @@
 		20BF12FC16355324CBFD7EDE /* Pods_EdSocialSC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EdSocialSC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		37BDA71393265050FFB6CCAA /* Pods-EdSocialSCUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EdSocialSCUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EdSocialSCUITests/Pods-EdSocialSCUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3D36716A1FF24D87004B98BB /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		3D4707341FD8D63000DF4373 /* NewUploadController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUploadController.swift; sourceTree = "<group>"; };
+		3D4707341FD8D63000DF4373 /* NewPostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPostController.swift; sourceTree = "<group>"; };
 		3D539AA91FF35813006082EB /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3D6A188C1FD39B1700E71B9F /* EdSocialSC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EdSocialSC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D6A188F1FD39B1700E71B9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3D6A18911FD39B1700E71B9F /* UploadsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadsController.swift; sourceTree = "<group>"; };
+		3D6A18911FD39B1700E71B9F /* PostsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsController.swift; sourceTree = "<group>"; };
 		3D6A18941FD39B1700E71B9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3D6A18961FD39B1700E71B9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D6A18991FD39B1700E71B9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -171,8 +171,8 @@
 			isa = PBXGroup;
 			children = (
 				3D6A18BE1FD4CB6C00E71B9F /* LoginController.swift */,
-				3D6A18911FD39B1700E71B9F /* UploadsController.swift */,
-				3D4707341FD8D63000DF4373 /* NewUploadController.swift */,
+				3D6A18911FD39B1700E71B9F /* PostsController.swift */,
+				3D4707341FD8D63000DF4373 /* NewPostController.swift */,
 				3D8C99391FE8BBCB00423F12 /* LoginControllers+handlers.swift */,
 			);
 			name = Controllers;
@@ -513,14 +513,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D6A18921FD39B1700E71B9F /* UploadsController.swift in Sources */,
+				3D6A18921FD39B1700E71B9F /* PostsController.swift in Sources */,
 				3D6A18BF1FD4CB6C00E71B9F /* LoginController.swift in Sources */,
 				3D8C993A1FE8BBCB00423F12 /* LoginControllers+handlers.swift in Sources */,
 				3D539AAA1FF35813006082EB /* Extensions.swift in Sources */,
 				3D6A18901FD39B1700E71B9F /* AppDelegate.swift in Sources */,
 				3DA492E51FD8FA1A00512AD1 /* EndUser.swift in Sources */,
 				3D36716B1FF24D87004B98BB /* Post.swift in Sources */,
-				3D4707351FD8D63000DF4373 /* NewUploadController.swift in Sources */,
+				3D4707351FD8D63000DF4373 /* NewPostController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

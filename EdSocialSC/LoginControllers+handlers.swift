@@ -77,7 +77,7 @@ extension LoginController: UIImagePickerControllerDelegate, UINavigationControll
                 return
             }
             
-            self.uploadsController?.navigationItem.title = values["name"] as? String
+            self.postsController?.navigationItem.title = values["name"] as? String
             self.dismiss(animated: true, completion: nil)
             print(("Saved user successfully into Firebase DB"))
         })
