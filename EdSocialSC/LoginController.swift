@@ -12,6 +12,8 @@ import FirebaseDatabase
 
 class LoginController: UIViewController {
     
+    var uploadsController: UploadsController?
+    
     lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "EdSocial-Wht")
@@ -90,61 +92,31 @@ class LoginController: UIViewController {
     
     func handleLogin() {
         guard let email = emailTextField.text, let password = passwordTextField.text
-            else {
-                print("Form is not valid.")
-                return
+        else {
+            print("Form is not valid.")
+            return
         }
         
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if error != nil {
-                print(error!)
+                print(error ?? "There was a problem signing in user.")
                 return
+            } else {
+                //Sign Success
+                let uid = user?.uid
+                print(uid!)
             }
         }
+        self.uploadsController?.fetchUserAndSetupNavBarTitle()
         self.dismiss(animated: true, completion: nil)
     }
     
-    func handleRegister() {
-        guard let email = emailTextField.text,
-            let password = passwordTextField.text,
-            let name = nameTextField.text
-            else {
-                print("Form is not valid.")
-                return
-        }
-        Auth.auth().createUser(withEmail: email, password: password, completion: { (user: User?, error) in
-            if error != nil {
-                print(error!)
-            }
-            guard let uid = user?.uid
-                else {
-                    return
-            }
-            
-            
-            
-            // successfully authenticated user
-            var ref: DatabaseReference!
-            ref = Database.database().reference(fromURL: "https://presidiosc-edsocial.firebaseio.com/")
-            let usersReference = ref.child("users").child(uid)
-            let values = ["name": name, "email": email]
-            usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
-                
-                if err != nil {
-                    print(err!)
-                    return
-                }
-                self.dismiss(animated: true, completion: nil)
-                print(("Saved user successfully into Firebase DB"))
-            })
-            
-        })
         
-    }
-    
     let nameTextField: UITextField = {
         let tf = UITextField()
         tf.placeholder = "Name"
+        tf.autocorrectionType = .no
+        //tf.autocapitalizationType = .sentences
         tf.translatesAutoresizingMaskIntoConstraints = false
         return tf
     }()
@@ -162,6 +134,7 @@ class LoginController: UIViewController {
         tf.keyboardType = .emailAddress
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.autocapitalizationType = .none
+        tf.autocorrectionType = .no
         return tf
     }()
     

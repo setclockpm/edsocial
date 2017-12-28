@@ -37,14 +37,33 @@ class UploadsController: UITableViewController {
         if Auth.auth().currentUser?.uid == nil {
             perform(#selector(handleLogout), with: nil, afterDelay: 0)
         } else {
-            let uid = Auth.auth().currentUser?.uid
-            Database.database().reference().child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
-                if let dictionary = snapshot.value as? [String: Any] {
-                    self.navigationItem.title = dictionary["name"] as? String
-                }
-            }, withCancel: nil)
+           fetchUserAndSetupNavBarTitle()
         }
 
+    }
+    
+    func fetchUserAndSetupNavBarTitle() {
+        
+        Auth.auth().addStateDidChangeListener { auth, user in
+            if user != nil {
+                // User is signed in. Show home screen
+                guard let uid = auth.currentUser?.uid else {
+                    //for some reason uid = nil
+                    return
+                }
+                print("uid: \(uid)")
+                
+                Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
+                    if let dictionary = snapshot.value as? [String: Any] {
+                        self.navigationItem.title = dictionary["name"] as? String
+                    }
+                }, withCancel: nil)
+                
+            } else {
+                // No User is signed in. Show user the login screen
+            }
+        }
+        
     }
     
     func handleLogout() {
@@ -56,6 +75,7 @@ class UploadsController: UITableViewController {
         
         
         let loginController = LoginController()
+        loginController.uploadsController = self
         present(loginController, animated: true, completion: nil)
     }
     
