@@ -16,6 +16,7 @@ class PostsController: UITableViewController {
     let cellID = "cellID"
     var users = [EndUser]()
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -26,8 +27,11 @@ class PostsController: UITableViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(handleNewPost))
         tableView.register(UserCell.self, forCellReuseIdentifier: cellID)
         checkUserIsLoggedIn()
-        fetchUser()
+        fetchUsers()
     }
+    
+    
+    
     
     func checkUserIsLoggedIn() {
         // User isn't logged in
@@ -64,7 +68,7 @@ class PostsController: UITableViewController {
     }
     
     
-    func fetchUser() {
+    func fetchUsers() {
         Database.database().reference().child("users").observe(.childAdded, with: { (snapshot) in
             if let dictionary = snapshot.value as? [String: Any] {
                 let user = EndUser()
