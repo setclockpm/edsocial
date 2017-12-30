@@ -11,6 +11,4 @@ import UIKit
 class Post: NSObject {
     var caption: String?
     var imageUrl: String?
-
-    
 }

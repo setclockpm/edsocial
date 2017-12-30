@@ -30,7 +30,7 @@ extension NewPostController: UIImagePickerControllerDelegate, UINavigationContro
         let imageName = NSUUID().uuidString
         let storageRef = Storage.storage().reference().child("social_media_images").child("\(imageName).jpg")
         
-        if let uploadedImage = self.uploadImageView.image, let uploadData = UIImageJPEGRepresentation(uploadedImage, 0.1) {
+        if let uploadedImage = self.uploadImageView.image, let uploadData = UIImageJPEGRepresentation(uploadedImage, 0.5) {
             storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
                 
                 if error != nil {
@@ -41,11 +41,35 @@ extension NewPostController: UIImagePickerControllerDelegate, UINavigationContro
                 if let uploadedImageUrl = metadata?.downloadURL()?.absoluteString {
                     let values = ["caption": caption, "uploadedImageUrl": uploadedImageUrl]
                     print(values["caption"]!)
-//                    self.registerPostIntoDatabaseWithUID(uid: uid, values: values)
+//                    self.postsController?.fetchUserAndSetupNavBarTitle()
+//                    self.dismiss(animated: true, completion: nil)
+                    self.registerPostIntoDatabase(values: values)
                 }
             })
         }
     }
+    
+    
+    private func registerPostIntoDatabase(values: [String: Any]) {
+        
+        var ref: DatabaseReference!
+        ref = Database.database().reference(fromURL: "https://presidiosc-edsocial.firebaseio.com/").child("posts")
+        let postsReference = ref.childByAutoId()
+        
+        postsReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
+            
+            if err != nil {
+                print(err!)
+                return
+            }
+            
+            self.postsController?.fetchUserAndSetupNavBarTitle()
+            self.dismiss(animated: true, completion: nil)
+            print(("Saved post successfully into Firebase DB"))
+        })
+        
+    }
+
 
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {

@@ -11,6 +11,8 @@ import FirebaseDatabase
 
 class NewPostController: UIViewController {
     
+    var postsController: PostsController?
+    
     
     lazy var uploadImageView: UIImageView = {
         let imageView = UIImageView()
@@ -81,6 +83,7 @@ class NewPostController: UIViewController {
         setupUploadButton()
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(handleCancel))
+        navigationItem.title = "Create New Image Post"
     }
     
     

@@ -282,11 +282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EdSocialSC/NewPostController.swift"
-            timestampString = "536355003.192419"
+            timestampString = "536368454.043341"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "uploadImageView"
             landmarkType = "24">
          </BreakpointContent>
@@ -298,11 +298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EdSocialSC/NewPostController.swift"
-            timestampString = "536364166.338945"
+            timestampString = "536368454.043341"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "setupUploadImageView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -342,15 +342,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EdSocialSC/NewPostController.swift"
-            timestampString = "536364784.029642"
+            timestampString = "536368454.043341"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
             landmarkName = "setupUploadButton()"
             landmarkType = "7">
          </BreakpointContent>
@@ -358,15 +358,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EdSocialSC/NewPostController.swift"
-            timestampString = "536364596.622423"
+            timestampString = "536368454.043341"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -410,11 +410,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EdSocialSC/NewPostController+handlers.swift"
-            timestampString = "536366769.230949"
+            timestampString = "536368454.043341"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "handleNewPost()"
             landmarkType = "7">
          </BreakpointContent>
@@ -426,11 +426,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EdSocialSC/NewPostController+handlers.swift"
-            timestampString = "536366872.608385"
+            timestampString = "536368454.043341"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "handleNewPost()"
             landmarkType = "7">
          </BreakpointContent>
