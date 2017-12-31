@@ -98,6 +98,8 @@ class PostsController: UITableViewController {
     func handleNewPost() {
         let newPostController = NewPostController()
         let navController = UINavigationController(rootViewController: newPostController)
+        
+        newPostController.postsController = self
         present(navController, animated: true, completion: nil)
     }
     

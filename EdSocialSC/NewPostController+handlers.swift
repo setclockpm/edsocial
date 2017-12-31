@@ -41,8 +41,6 @@ extension NewPostController: UIImagePickerControllerDelegate, UINavigationContro
                 if let uploadedImageUrl = metadata?.downloadURL()?.absoluteString {
                     let values = ["caption": caption, "uploadedImageUrl": uploadedImageUrl]
                     print(values["caption"]!)
-//                    self.postsController?.fetchUserAndSetupNavBarTitle()
-//                    self.dismiss(animated: true, completion: nil)
                     self.registerPostIntoDatabase(values: values)
                 }
             })
