@@ -41,7 +41,7 @@ extension LoginController: UIImagePickerControllerDelegate, UINavigationControll
             
             // Storing photo on Firebase
             let imageName = NSUUID().uuidString
-            let storageRef = Storage.storage().reference().child("social_media_images").child("\(imageName).jpg")
+            let storageRef = Storage.storage().reference().child("profile_images").child("\(imageName).jpg")
             
             if let profileImage = self.profileImageView.image, let uploadData = UIImageJPEGRepresentation(profileImage, 0.1) {
                 storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
